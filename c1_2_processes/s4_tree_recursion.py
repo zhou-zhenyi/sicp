@@ -1,3 +1,5 @@
+from util import logl
+
 def fib(n):
     # if n == 0:
     #     return 0
@@ -8,6 +10,8 @@ def fib(n):
     return fib_iter(1, 0, n)
 
 def fib_iter(a, b, count):
+    logl("(" + str(a) + ", " + str(b) + ", " + str(count) + ")")
+
     if count == 0:
         return b
     else:

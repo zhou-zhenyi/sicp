@@ -1,5 +1,10 @@
+from util import logl
+from util import newl
+
 def pascal_triangle(n):
     def sum_of_nodes(sum, i, n):
+        logl("(" + str(sum) + ", " + str(i) + ", " + str(n) + ")")
+
         def node(i, n):
             if i == 1 or i == n:
                 return 1
@@ -16,9 +21,15 @@ def pascal_triangle(n):
     return sum_of_nodes(0, n, n)
 
 print(pascal_triangle(1))
+newl()
 print(pascal_triangle(2))
+newl()
 print(pascal_triangle(3))
+newl()
 print(pascal_triangle(4))
+newl()
 print(pascal_triangle(5))
+newl()
 print(pascal_triangle(6))
+newl()
 print(pascal_triangle(7))

@@ -1,7 +1,11 @@
+from util import logl
+
 def count_change(amount):
     return cc(amount, 5)
 
 def cc(amount, kinds_of_coins):
+    logl("(" + str(amount) + ", " + str(kinds_of_coins) + ")")
+
     if amount == 0:
         return 1
     elif amount < 0 or kinds_of_coins == 0:

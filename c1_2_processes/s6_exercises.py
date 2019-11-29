@@ -1,4 +1,9 @@
+from util import logl
+from util import newl
+
 def f_recu(n):
+    logl("(" + str(n) + ")")
+
     if n < 3:
         return n
     else:
@@ -6,7 +11,12 @@ def f_recu(n):
 
 print(f_recu(7))
 
+newl()
+
 def f_iter(a, b, c, i, n):
+    logl("(" + str(a) + ", " + str(b) + ", " + str(c) +
+         ", " + str(i) + ", " + str(n) + ")")
+
     if n < 3:
         return n
     elif i > n:
