@@ -1,5 +1,8 @@
 from util import logl
 from util import newl
+from util import double
+from util import halve
+from util import even
 
 def expt_mult(a, b):
     logl("(" + str(a) + ", " + str(b) + ")")
@@ -12,15 +15,6 @@ def expt_mult(a, b):
 print(expt_mult(3, 9))
 
 newl()
-
-def double(x):
-    return x + x
-
-def halve(x):
-    return x / 2
-
-def even(n):
-    return n % 2 == 0
 
 def fast_expt(a, b):
     logl("(" + str(a) + ", " + str(b) + ")")

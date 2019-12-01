@@ -1,4 +1,6 @@
 from util import logl
+from util import square
+from util import even
 
 def expt(b, n):
     def expt_iter(a, b, n):
@@ -12,11 +14,5 @@ def expt(b, n):
             return expt_iter(a * b, b, n - 1)
 
     return expt_iter(1, b, n)
-
-def square(x):
-    return x * x
-
-def even(n):
-    return n % 2 == 0
 
 print(expt(5, 3))

@@ -11,3 +11,15 @@ def newl():
 
 def logl(msg):
     print(str(line()) + ": " + msg)
+
+def square(x):
+    return x * x
+
+def double(x):
+    return x + x
+
+def halve(x):
+    return x / 2
+
+def even(n):
+    return n % 2 == 0

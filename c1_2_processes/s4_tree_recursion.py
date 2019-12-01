@@ -17,4 +17,4 @@ def fib_iter(a, b, count):
     else:
         return fib_iter(a + b, a, count - 1)
 
-print(fib(5))
+print(fib(10))

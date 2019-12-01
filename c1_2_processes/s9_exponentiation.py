@@ -1,5 +1,7 @@
 from util import logl
 from util import newl
+from util import square
+from util import even
 
 def expt(b, n):
     # if n == 0:
@@ -29,11 +31,5 @@ def fast_expt(b, n):
         return square(fast_expt(b, n / 2))
     else:
         return b * fast_expt(b, n - 1)
-
-def square(x):
-    return x * x
-
-def even(n):
-    return n % 2 == 0
 
 print(fast_expt(2, 12))
