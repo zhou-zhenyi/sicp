@@ -5,6 +5,7 @@ from util import logl
 from util import newl
 from util import cube
 from util import inc
+from util import identity
 
 def sum_integers(a, b):
     # if a > b:
@@ -40,9 +41,6 @@ def sum(term, a, next, b):
         return 0
     else:
         return term(a) + sum(term, next(a), next, b)
-
-def identity(x):
-    return x
 
 print(sum_integers(3, 5))
 newl()

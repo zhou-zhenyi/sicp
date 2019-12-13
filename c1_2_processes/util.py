@@ -23,3 +23,20 @@ def halve(x):
 
 def even(n):
     return n % 2 == 0
+
+def prime(n):
+    def smallest_divisor(n):
+        def find_divisor(n, test_divisor):
+            def divides(a, b):
+                return b % a == 0
+
+            if square(test_divisor) > n:
+                return n
+            elif divides(test_divisor, n):
+                return test_divisor
+            else:
+                return find_divisor(n, test_divisor + 1)
+
+        return find_divisor(n, 2)
+
+    return n == smallest_divisor(n)

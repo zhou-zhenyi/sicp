@@ -5,6 +5,7 @@ from time import time_ns
 
 from util import square
 from util import even
+from util import prime
 
 def timed_prime_test(n):
     return start_prime_test(n, time_ns())
@@ -19,29 +20,6 @@ def start_prime_test(n, start_time):
 
 def report_prime(n, elapsed_time):
     print(str(n) + " *** " + str(elapsed_time))
-
-def prime(n):
-    def smallest_divisor(n):
-        def find_divisor(n, test_divisor):
-            def next(test_divisor):
-                if test_divisor == 2:
-                    return 3
-                else:
-                    return test_divisor + 2
-
-            def divides(a, b):
-                return b % a == 0
-
-            if square(test_divisor) > n:
-                return n
-            elif divides(test_divisor, n):
-                return test_divisor
-            else:
-                return find_divisor(n, next(test_divisor))
-
-        return find_divisor(n, 2)
-
-    return n == smallest_divisor(n)
 
 def search_for_prime(n, i):
     if i == 0:
