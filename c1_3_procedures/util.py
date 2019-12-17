@@ -24,6 +24,9 @@ def halve(x):
 def even(n):
     return n % 2 == 0
 
+def average(x, y):
+    return (x + y) / 2
+
 def prime(n):
     def smallest_divisor(n):
         def find_divisor(n, test_divisor):
