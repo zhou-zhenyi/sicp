@@ -27,6 +27,21 @@ def even(n):
 def average(x, y):
     return (x + y) / 2
 
+def cube(x):
+    return x * x * x
+
+def inc(n):
+    return n + 1
+
+def identity(x):
+    return x
+
+def add(a, b):
+    return a + b
+
+def mul(a, b):
+    return a * b
+
 def prime(n):
     def smallest_divisor(n):
         def find_divisor(n, test_divisor):
@@ -53,23 +68,22 @@ def gcd(a, b):
     else:
         return gcd(b, a % b)
 
-def cube(x):
-    return x * x * x
-
-def inc(n):
-    return n + 1
-
-def identity(x):
-    return x
-
-def add(a, b):
-    return a + b
-
-def mul(a, b):
-    return a * b
-
 def sum(term, a, next, b):
     if a > b:
         return 0
     else:
         return term(a) + sum(term, next(a), next, b)
+
+def fixed_point(f, first_guess):
+    def close_enough(v1, v2):
+        return abs(v1 - v2) < 0.00001
+
+    def try_it(guess):
+        next = f(guess)
+
+        if close_enough(guess, next):
+            return next
+
+        return try_it(next)
+
+    return try_it(first_guess)
