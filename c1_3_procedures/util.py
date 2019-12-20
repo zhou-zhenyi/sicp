@@ -87,3 +87,12 @@ def fixed_point(f, first_guess):
         return try_it(next)
 
     return try_it(first_guess)
+
+def cont_frac(n, d, k):
+    def iter(i, x):
+        if i == 0:
+            return x
+        
+        return iter(i - 1, n(i) / (d(i) + x))
+
+    return iter(k, 0)
