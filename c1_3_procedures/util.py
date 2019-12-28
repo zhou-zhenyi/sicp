@@ -96,3 +96,24 @@ def cont_frac(n, d, k):
         return iter(i - 1, n(i) / (d(i) + x))
 
     return iter(k, 0)
+
+def average_damp(f):
+    return lambda x: average(x, f(x))
+
+def newtons_method(g, guess):
+    def newton_transform(g):
+        def deriv(g):
+            return lambda x: (g(x + 0.00001) - g(x)) / 0.00001
+
+        return lambda x: x - (g(x) / deriv(g)(x))
+
+    return fixed_point(newton_transform(g), guess)
+
+def repeated(f, n):
+    def compose(f, g):
+        return lambda x: f(g(x))
+
+    if n == 1:
+        return lambda x: f(x)
+    else:
+        return repeated(compose(f, f), n - 1)
