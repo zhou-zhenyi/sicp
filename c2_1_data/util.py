@@ -97,11 +97,19 @@ def cont_frac(n, d, k):
 
     return iter(k, 0)
 
-def cons(car, cdr):
-    return lambda pair: pair(car, cdr)
+def cons(x, y):
+    def dispatch(m):
+        if m == 0:
+            return x
+        elif m == 1:
+            return y
+        else:
+            print("Argument not 0 or 1 -- CONS " + m)
+    
+    return dispatch
 
-def car(pair):
-    return pair(lambda car, cdr: car)
+def car(z):
+    return z(0)
 
-def cdr(pair):
-    return pair(lambda car, cdr: cdr)
+def cdr(z):
+    return z(1)
