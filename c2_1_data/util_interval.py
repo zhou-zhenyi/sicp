@@ -1,4 +1,4 @@
-from util import cons, car, cdr
+from util_pair import cons, car, cdr
 
 def add_interval(x, y):
     return make_interval(lower_bound(x) + lower_bound(y),

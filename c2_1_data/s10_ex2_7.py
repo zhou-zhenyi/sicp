@@ -1,4 +1,4 @@
-from util import cons, car, cdr
+from util_pair import cons, car, cdr
 from util_interval import make_interval, print_interval
 from util_interval import add_interval, mul_interval, div_interval
 
