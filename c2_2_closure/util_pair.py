@@ -24,6 +24,12 @@ def list(items):
 
     return sequence
 
+def null(list):
+    if list == None:
+        return True
+
+    return False
+
 def print_list(list):
     a = car(list)
     b = cdr(list)
